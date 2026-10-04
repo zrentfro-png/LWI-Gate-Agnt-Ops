@@ -178,6 +178,103 @@ body.tv-mode{background:#000;color:#fff;overflow:hidden}.tv-mode #application,.t
 .tv-detail-footnote{padding-top:.4cqw}
 .tv-route-line+.tv-route-city+.tv-time-cards{margin-top:.2cqw}
 .tv-black-footer{border-top:.14cqw solid var(--carrier-accent)}
+
+/* Carrier-specific screen compositions. These alter the actual board geometry, not just brand colors. */
+.tv-layout-united .tv-split-body{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+/* American: traditional gate board, compact airline masthead and broad flight-data table. */
+.tv-layout-american{display:grid;grid-template-columns:1fr;grid-template-rows:11% 13% minmax(0,1fr) auto auto 7%}
+.tv-layout-american>.tv-black-header{grid-row:1;display:grid;grid-template-columns:minmax(0,1fr) 17cqw 9cqw;gap:1.2cqw}
+.tv-layout-american>.tv-black-header h1{grid-column:1;grid-row:1;font-size:2.6cqw;max-width:none}
+.tv-layout-american>.tv-black-header .tv-brand{grid-column:2;grid-row:1;justify-self:center}
+.tv-layout-american>.tv-black-header .tv-header-gate{grid-column:3;grid-row:1;border:0;background:#c8102e;color:#fff;padding:.55cqw 1cqw;text-align:center;font-weight:800}
+.tv-layout-american>.tv-flight-strip{grid-row:2;display:grid;grid-template-columns:1.1fr 1fr 1fr .8fr;gap:0;padding:0 1.7cqw}
+.tv-layout-american>.tv-flight-strip>*{padding-left:1.2cqw;border-left:.08cqw solid #ffffff55}
+.tv-layout-american>.tv-flight-strip>*:first-child{border:0;padding-left:0}
+.tv-layout-american>.tv-split-body{grid-row:3;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+/* JetBlue: signature vertical carrier masthead at left, live flight and boarding workspace on right. */
+.tv-layout-jetblue{display:grid;grid-template-columns:17% 83%;grid-template-rows:12% 12% minmax(0,1fr) auto auto 7%}
+.tv-layout-jetblue>.tv-black-header{grid-column:1;grid-row:1/4;flex-direction:column;justify-content:space-evenly;gap:1.5cqw;padding:2cqw 1.2cqw;text-align:center;border-bottom:0;border-right:.4cqw solid #00a6ce}
+.tv-layout-jetblue>.tv-black-header h1{font-size:2.2cqw;max-width:100%;line-height:1.15;flex:none;order:2}
+.tv-layout-jetblue>.tv-black-header .tv-brand{order:1;width:12.5cqw;height:5cqw}
+.tv-layout-jetblue>.tv-black-header .tv-header-gate{order:3;border:0;border-top:.08cqw solid #ffffff55;padding:1cqw 0 0;font-size:4cqw}
+.tv-layout-jetblue>.tv-flight-strip{grid-column:2;grid-row:1;gap:2cqw}
+.tv-layout-jetblue>.tv-split-body{grid-column:2;grid-row:2/4;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr)}
+.tv-layout-jetblue>.tv-black-footer,.tv-layout-jetblue>.tv-announcement-strip{grid-column:1/3}
+/* Alaska: full-width route board above a full-width boarding lane. */
+.tv-layout-alaska{display:grid;grid-template-columns:1fr;grid-template-rows:11% 14% minmax(0,1fr) auto auto 7%}
+.tv-layout-alaska>.tv-black-header{grid-row:1}
+.tv-layout-alaska>.tv-flight-strip{grid-row:2}
+.tv-layout-alaska>.tv-split-body{grid-row:3;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) 31%;}
+.tv-layout-alaska .tv-information{border-right:0;border-bottom:.15cqw solid #00a3ad}
+.tv-layout-alaska .tv-boarding-status{display:grid;grid-template-columns:18% 82%;align-items:stretch}
+.tv-layout-alaska .tv-boarding-heading{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.16cqw}
+.tv-layout-alaska .tv-brand-boarding{border-top:0;border-left:.2cqw solid #00a3ad}
+/* Southwest: departure summary on the left, large boarding call panel on the right. */
+.tv-layout-southwest{display:flex;flex-direction:column}
+.tv-layout-southwest>.tv-black-header{flex:0 0 10%;display:flex;flex-direction:row-reverse;justify-content:space-between}
+.tv-layout-southwest>.tv-black-header .tv-brand{order:-1;width:13cqw;height:4.5cqw}
+.tv-layout-southwest>.tv-flight-strip{flex:0 0 11%;border-top:.25cqw solid #f9b612}
+.tv-layout-southwest>.tv-split-body{flex:1;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr)}
+.tv-layout-southwest .tv-boarding-status{border-left:.35cqw solid #c8102e}
+.tv-layout-southwest .tv-brand-boarding{border-top:.4cqw solid #f9b612}
+/* Breeze: airy two-zone composition; the flight ribbon anchors the bottom of the live workspace. */
+.tv-layout-breeze{display:grid;grid-template-columns:1fr;grid-template-rows:10% minmax(0,1fr) 13% auto auto 7%}
+.tv-layout-breeze>.tv-black-header{grid-row:1}
+.tv-layout-breeze>.tv-split-body{grid-row:2;grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr)}
+.tv-layout-breeze>.tv-flight-strip{grid-row:3;border-top:.12cqw solid #ef4a81}
+.tv-layout-breeze .tv-information{border-right:.24cqw solid #cfe5f0}
+.tv-layout-breeze .tv-boarding-status{background:#eaf5fb;border-left:0}
+/* Delta: prominent boarding status occupies the left half; itinerary and service pages sit to the right. */
+.tv-layout-delta>.tv-split-body{grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr)}
+.tv-layout-delta .tv-information{order:2;border-right:0;border-left:.16cqw solid #c8102e}
+.tv-layout-delta .tv-boarding-status{order:1}
+.tv-layout-delta>.tv-black-header{border-bottom:.25cqw solid #c8102e}
+/* Frontier: compact flight facts rail with a wide gate-area status board. */
+.tv-layout-frontier>.tv-split-body{grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr)}
+.tv-layout-frontier .tv-information{border-right:.22cqw solid #00843d}
+.tv-layout-frontier .tv-boarding-status{background:#edf2ee}
+.tv-layout-frontier .tv-boarding-heading{font-size:1.25cqw}
+.tv-layout-frontier .tv-current-group span{font-size:3.1cqw}
+/* Spirit: black/yellow high-contrast operation board with yellow key data and no pale cards. */
+.tv-layout-spirit{background:#111;color:#fff}
+.tv-layout-spirit>.tv-black-header{background:#111;border-bottom:.5cqw solid #ffed00}
+.tv-layout-spirit>.tv-flight-strip{background:#ffed00;color:#111}
+.tv-layout-spirit .tv-information{background:#171717;color:#fff;border-right:.14cqw solid #ffed00}
+.tv-layout-spirit .tv-detail-pane>h2,.tv-layout-spirit .tv-detail-row>b,.tv-layout-spirit .tv-route-line,.tv-layout-spirit .tv-time-cards strong{color:#fff}
+.tv-layout-spirit .tv-detail-row,.tv-layout-spirit .tv-route-line{border-color:#4e4e4e}
+.tv-layout-spirit .tv-detail-row>span,.tv-layout-spirit .tv-route-city,.tv-layout-spirit .tv-time-cards label{color:#d0d0d0}
+.tv-layout-spirit .tv-time-cards>div+div{border-color:#555}
+.tv-layout-spirit .tv-boarding-status{background:#111;color:#fff;border-left:.14cqw solid #ffed00}
+.tv-layout-spirit .tv-brand-boarding{background:#161616;color:#fff;border-top-color:#ffed00}
+.tv-layout-spirit .tv-current-group{background:#222;border-color:#ffed00}
+.tv-layout-spirit .tv-current-group span,.tv-layout-spirit .tv-now-label{color:#ffed00}
+.tv-layout-spirit .tv-black-footer{background:#080808;border-top:.25cqw solid #ffed00}
+/* Allegiant: route/data stage full width; boarding call sits as a bottom status rail. */
+.tv-layout-allegiant{display:grid;grid-template-columns:1fr;grid-template-rows:10% 12% minmax(0,1fr) auto auto 7%}
+.tv-layout-allegiant>.tv-black-header{grid-row:1}
+.tv-layout-allegiant>.tv-flight-strip{grid-row:2}
+.tv-layout-allegiant>.tv-split-body{grid-row:3;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) 33%}
+.tv-layout-allegiant .tv-information{border-right:0;border-bottom:.14cqw solid #f8bd00}
+.tv-layout-allegiant .tv-boarding-status{display:grid;grid-template-columns:20% 80%;align-items:stretch}
+.tv-layout-allegiant .tv-boarding-heading{font-size:1.25cqw}
+.tv-layout-allegiant .tv-brand-boarding{border-top:0;border-left:.2cqw solid #f8bd00}
+/* Sun Country: route card and boarding status are parallel, with a bright yellow departure rail. */
+.tv-layout-suncountry>.tv-flight-strip{background:#f4c400;color:#10233b;border-top:.16cqw solid #fff}
+.tv-layout-suncountry>.tv-flight-strip label{color:#35465a}
+.tv-layout-suncountry .tv-status-pill{background:#003b71;color:#fff}
+.tv-layout-suncountry>.tv-split-body{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}
+.tv-layout-suncountry .tv-information{border-right:.22cqw solid #f4c400}
+.tv-layout-suncountry .tv-brand-boarding{border-top:.35cqw solid #f4c400}
+/* Hawaiian: purple gate board with a left-side boarding column, separate from route details. */
+.tv-layout-hawaiian>.tv-split-body{grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr)}
+.tv-layout-hawaiian .tv-information{order:2;border-right:0;border-left:.22cqw solid #e31b54}
+.tv-layout-hawaiian .tv-boarding-status{order:1}
+.tv-layout-hawaiian .tv-brand{width:16cqw;height:5cqw}
+/* Avelo: left hand flight status stack and right hand passenger information panel. */
+.tv-layout-avelo>.tv-split-body{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr)}
+.tv-layout-avelo .tv-information{order:2;border-right:0;border-left:.2cqw solid #61c8e8}
+.tv-layout-avelo .tv-boarding-status{order:1}
+.tv-layout-avelo .tv-brand-boarding{border-top:0;border-left:.3cqw solid #61c8e8}
 </style></head>
 <body>
 <div id="loading" class="loading" role="status"><strong>LWI AIRPORT OPERATIONS</strong><p>Preparing 135 airline-assigned gates…</p></div>
