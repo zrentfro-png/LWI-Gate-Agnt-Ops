@@ -58,6 +58,126 @@ body.tv-mode{background:#000;color:#fff;overflow:hidden}.tv-mode #application,.t
 .ua-tv-generic .tv-generic-strip{background:var(--carrier-primary)}.ua-tv-generic .tv-generic-hero{background:linear-gradient(135deg,color-mix(in srgb,var(--carrier-primary),#09152c 24%),var(--carrier-primary))}.ua-tv-generic .tv-generic-card{border-left-color:var(--carrier-primary)}.ua-tv-generic .tv-generic-card b{color:var(--carrier-primary)}.ua-tv-generic .tv-generic-card.tv-overnight-assistance{border-left-color:var(--carrier-accent)}.ua-tv-generic .tv-generic-watermark .tv-carrier-watermark{color:var(--carrier-primary)}.tv-generic-spirit .tv-generic-strip{color:#161616}.tv-generic-spirit .tv-generic-hero{background:linear-gradient(135deg,#171717,#353535);border-top:.65cqw solid #ffed00}.tv-generic-spirit .tv-generic-hero>small{color:#ffed00}.tv-generic-spirit .tv-overnight-assistance{border-left-color:#ffed00!important}
 
 .header-tools .reset-simulation{color:#fff1f1;border-color:#b76c75}.header-tools .reset-simulation:hover{background:#642b36;border-color:#ef929e}
+
+/* Passenger display refresh: functional gate hardware feel, with each carrier's own palette and geometry. */
+.tv-carrier-logo{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;background:#fff}
+.tv-brand{flex:none;width:14cqw;height:5.2cqw;padding:.55cqw .8cqw;background:#fff;color:#111;border:0;border-radius:0}
+.tv-brand .tv-carrier-logo{max-width:100%;max-height:100%}
+.tv-generic-logo{background:#fff;border-radius:0;padding:.6cqw 1cqw}
+.tv-generic-logo .tv-carrier-logo{width:100%;height:100%;object-fit:contain}
+.tv-generic-watermark img{display:block;width:100%;height:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.18}
+.tv-black-header{border-bottom:.25cqw solid var(--carrier-accent,#00a6d2)}
+.tv-flight-strip{border-bottom:.08cqw solid #b9c5d1}
+.tv-split-body{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+.tv-information{border-right:.08cqw solid #b8c2cc}
+.tv-pane-tabs{gap:1.25cqw;background:#eef1f4;border-bottom:.08cqw solid #aab4bf}
+.tv-pane-tabs span{font-weight:600}
+.tv-pane-content{padding:1.05cqw 1.45cqw .75cqw}
+.tv-detail-pane>h2{font-weight:650;border-bottom:.08cqw solid #aab4bf;padding-bottom:.5cqw}
+.tv-detail-row{padding:.52cqw 0}
+.tv-boarding-status{background:#f1f3f5;color:#101820;border-left:.12cqw solid #8995a1}
+.tv-boarding-heading{background:var(--carrier-primary,#005daa);color:#fff;border-bottom:.18cqw solid var(--carrier-accent,#00a6d2);font-weight:700;text-transform:uppercase;letter-spacing:.12cqw}
+.tv-brand-boarding{background:#f1f3f5;color:#101820;border-top:.24cqw solid var(--carrier-primary);padding:1.6cqw 1.8cqw;gap:.7cqw}
+.tv-brand-boarding:before{display:none}
+.tv-current-group{background:#fff;box-shadow:none;border-left:.35cqw solid var(--carrier-accent);border-top:.08cqw solid #aab4bf;border-bottom:.08cqw solid #aab4bf;padding:1cqw 1.2cqw}
+.tv-current-group span{font-size:3.7cqw}
+.tv-current-group small,.tv-next-group small{color:#3d4853}
+.tv-next-group{border-top:0;padding:.45cqw .3cqw}
+.tv-brand-step-list{gap:.14cqw}
+.tv-brand-step-list span{padding:.3cqw .12cqw;background:#d9dee3;border-top:.2cqw solid #8995a1}
+.tv-brand-step-list span.active{background:var(--carrier-primary);border-color:var(--carrier-accent);color:#fff}
+.tv-brand-step-list span.done{background:#cbd6dc;color:#24303a;border-color:#596a78}
+.tv-tv-black-footer{border-top:.14cqw solid var(--carrier-accent)}
+.tv-generic-hero{border-radius:0;background:var(--carrier-primary)!important}
+.tv-generic-card{border-radius:0;box-shadow:none}
+.tv-generic-main{gap:1.4cqw}
+
+/* United's blue and white gate display. */
+.tv-layout-united .tv-black-header{background:#080b10}
+.tv-layout-united .tv-flight-strip{background:#005daa}
+.tv-layout-united .tv-boarding-heading{background:#061b49}
+/* American: bright flight board, blue data band, red dividers. */
+.tv-layout-american .tv-black-header{background:#f3f4f5;border-bottom:.45cqw solid #c8102e}
+.tv-layout-american .tv-black-header h1{color:#1b365d}
+.tv-layout-american .tv-flight-strip{background:#1b365d;color:#fff}
+.tv-layout-american .tv-split-body{grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr)}
+.tv-layout-american .tv-boarding-heading{background:#343a40;border-color:#c8102e}
+/* JetBlue: deep navy identity with cyan information markers. */
+.tv-layout-jetblue .tv-black-header{background:#001b45;border-bottom:.38cqw solid #00a6ce}
+.tv-layout-jetblue .tv-flight-strip{background:#003876}
+.tv-layout-jetblue .tv-split-body{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)}
+.tv-layout-jetblue .tv-boarding-heading{background:#001b45;border-color:#00a6ce}
+/* Alaska: pale header, dark blue route information, teal callouts. */
+.tv-layout-alaska .tv-black-header{background:#f5f7f8;border-bottom:.3cqw solid #00a3ad}
+.tv-layout-alaska .tv-black-header h1{color:#00385e}
+.tv-layout-alaska .tv-flight-strip{background:#00385e}
+.tv-layout-alaska .tv-split-body{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.tv-layout-alaska .tv-boarding-heading{background:#00385e;border-color:#00a3ad}
+/* Southwest: white board, blue information band, red/yellow marker. */
+.tv-layout-southwest .tv-black-header{background:#fff;border-bottom:.45cqw solid #c8102e}
+.tv-layout-southwest .tv-black-header h1{color:#132c62}
+.tv-layout-southwest .tv-flight-strip{background:#304cb2;border-bottom:.34cqw solid #f9b612}
+.tv-layout-southwest .tv-split-body{grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr)}
+.tv-layout-southwest .tv-boarding-heading{background:#132c62;border-color:#f9b612}
+/* Breeze: open pale-blue information area with blue and pink rules. */
+.tv-layout-breeze .tv-black-header{background:#f7fafc;border-bottom:.34cqw solid #ef4a81}
+.tv-layout-breeze .tv-black-header h1{color:#003a62}
+.tv-layout-breeze .tv-flight-strip{background:#0077c8}
+.tv-layout-breeze .tv-split-body{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.tv-layout-breeze .tv-boarding-heading{background:#003a62;border-color:#ef4a81}
+/* Delta: dark blue flight band and restrained red status accents. */
+.tv-layout-delta .tv-black-header{background:#fff;border-bottom:.38cqw solid #c8102e}
+.tv-layout-delta .tv-black-header h1{color:#003a70}
+.tv-layout-delta .tv-flight-strip{background:#003a70}
+.tv-layout-delta .tv-split-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.tv-layout-delta .tv-boarding-heading{background:#092b50;border-color:#c8102e}
+/* Frontier: green status header with amber callout line. */
+.tv-layout-frontier .tv-black-header{background:#06452a;border-bottom:.35cqw solid #f5a623}
+.tv-layout-frontier .tv-flight-strip{background:#eef3ef;color:#153425;border-bottom:.22cqw solid #00843d}
+.tv-layout-frontier .tv-flight-strip label{color:#415c4d}
+.tv-layout-frontier .tv-boarding-heading{background:#06452a;border-color:#f5a623}
+/* Spirit: high-contrast black, yellow and white, with a narrow flight-data ticker. */
+.tv-layout-spirit .tv-black-header{background:#111;border-bottom:.5cqw solid #ffed00}
+.tv-layout-spirit .tv-flight-strip{background:#ffed00;color:#111;border:0}
+.tv-layout-spirit .tv-flight-strip label{color:#303030}
+.tv-layout-spirit .tv-status-pill{background:#111;color:#ffed00}
+.tv-layout-spirit .tv-split-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.tv-layout-spirit .tv-boarding-heading{background:#111;color:#ffed00;border-color:#ffed00}
+/* Allegiant and Sun Country use compact navy boards with yellow status keys. */
+.tv-layout-allegiant .tv-black-header{background:#102858;border-bottom:.4cqw solid #f8bd00}
+.tv-layout-allegiant .tv-flight-strip{background:#0a2d69}
+.tv-layout-allegiant .tv-boarding-heading{background:#102858;border-color:#f8bd00}
+.tv-layout-suncountry .tv-black-header{background:#003b71;border-bottom:.45cqw solid #f4c400}
+.tv-layout-suncountry .tv-flight-strip{background:#f4c400;color:#10233b}
+.tv-layout-suncountry .tv-flight-strip label{color:#344253}
+.tv-layout-suncountry .tv-status-pill{background:#003b71;color:#fff}
+.tv-layout-suncountry .tv-boarding-heading{background:#003b71;border-color:#f4c400}
+/* Hawaiian: plum identity and magenta status lines. */
+.tv-layout-hawaiian .tv-black-header{background:#40194c;border-bottom:.42cqw solid #e31b54}
+.tv-layout-hawaiian .tv-flight-strip{background:#4b1d54}
+.tv-layout-hawaiian .tv-split-body{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.tv-layout-hawaiian .tv-boarding-heading{background:#40194c;border-color:#e31b54}
+/* Avelo: clear blue and turquoise board with an understated pink callout. */
+.tv-layout-avelo .tv-black-header{background:#102b57;border-bottom:.38cqw solid #61c8e8}
+.tv-layout-avelo .tv-flight-strip{background:#17366f}
+.tv-layout-avelo .tv-boarding-heading{background:#102b57;border-color:#61c8e8}
+/* Keep rotating pages as gate signage, not a slide deck: no visible navigation tabs or card shadows. */
+.tv-pane-tabs{display:none}
+.tv-pane-content{padding:1.55cqw 1.8cqw 1.1cqw}
+.tv-detail-pane>h2{font-size:1.75cqw;text-transform:uppercase;letter-spacing:.09cqw;font-weight:700;margin-bottom:.2cqw;padding-bottom:.42cqw}
+.tv-route-line{padding:.45cqw 0;border-bottom:0;justify-content:flex-start;gap:1.25cqw}
+.tv-route-line b{font-size:3.6cqw;font-weight:700;letter-spacing:.04cqw}
+.tv-route-line .tv-icon{width:1.5cqw;height:1.5cqw}
+.tv-route-city{margin:0 0 .55cqw;font-size:1.1cqw}
+.tv-time-cards{gap:0;border-top:.08cqw solid #aab4bf;border-bottom:.08cqw solid #aab4bf;margin:.45cqw 0 .55cqw}
+.tv-time-cards>div{background:transparent;padding:.62cqw .8cqw .62cqw 0}
+.tv-time-cards>div+div{padding-left:1cqw;border-left:.08cqw solid #c3cbd3}
+.tv-time-cards strong{font-size:1.8cqw;font-weight:700;color:#152b50}
+.tv-time-cards label{font-size:.88cqw;text-transform:uppercase;letter-spacing:.04cqw}
+.tv-detail-row{padding:.4cqw 0;font-size:1cqw}
+.tv-detail-footnote{padding-top:.4cqw}
+.tv-route-line+.tv-route-city+.tv-time-cards{margin-top:.2cqw}
+.tv-black-footer{border-top:.14cqw solid var(--carrier-accent)}
 </style></head>
 <body>
 <div id="loading" class="loading" role="status"><strong>LWI AIRPORT OPERATIONS</strong><p>Preparing 135 airline-assigned gates…</p></div>
@@ -535,8 +655,9 @@ body.tv-mode{background:#000;color:#fff;overflow:hidden}.tv-mode #application,.t
   const C=GateCore,S=GateStorage,channel=typeof BroadcastChannel==='function'?new BroadcastChannel('lwi-united-gates-v3'):null;
   const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const globe='<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="20" cy="20" r="18"/><ellipse cx="20" cy="20" rx="10" ry="18"/><ellipse cx="20" cy="20" rx="3.5" ry="18"/><path d="M4 11h32M2 20h36M4 29h32"/></svg>';
-  const unitedLogo='https://i.logos-download.com/1558/30601-s640-687431c1f18380714a38b4677423a22c.png/United_Airlines_Logo_2010-s640.png?dl=';
-  function airlineLockup(a){if(a.code==='UA')return '<img class="tv-united-logo" src="'+unitedLogo+'" alt="United Airlines" decoding="async">';const names={XP:'Avelo',AA:'AMERICAN AIRLINES',B6:'jetBlue',AS:'Alaska',WN:'southwest',MX:'Breeze',DL:'DELTA',F9:'frontier',NK:'spirit',G4:'allegiant',SY:'Sun Country',HA:'HAWAIIAN'};const marks={AA:'<i class="mark-aa"><b></b><b></b></i>',WN:'<i class="mark-heart">♥</i>',DL:'<i class="mark-delta">◆</i>',HA:'<i class="mark-hibiscus">✿</i>',SY:'<i class="mark-sun">◒</i>',AS:'<i class="mark-star">✦</i>',G4:'<i class="mark-sun">✦</i>'};return (marks[a.code]||'')+'<b class="tv-wordmark tv-wordmark-'+a.boarding.style+'">'+esc(names[a.code]||a.name)+'</b>'}
+  const logoFiles={UA:'United Airlines Logo.svg',XP:'Logo of Avelo Airlines.svg',AA:'American Airlines wordmark (2013).svg',B6:'JetBlue Airways Logo.svg',AS:'Alaska Airlines Logo.svg',WN:'Southwest Airlines logo 2014.svg',MX:'Breeze Airways.svg',DL:'Delta logo.svg',F9:'Frontier Airlines Logo.svg',NK:'Spirit Airlines logo.svg',G4:'Allegiant Air logo.svg',SY:'Logo Sun Country Airlines 2020.svg',HA:'Hawaiian Airlines 2017 wordmark.svg'};
+  const logoURL=code=>'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(logoFiles[code]||'');
+  function airlineLockup(a,decorative=false){return '<img class="tv-carrier-logo'+(a.code==='UA'?' tv-united-logo':'')+'" src="'+logoURL(a.code)+'" alt="'+(decorative?'':esc(a.name)+' logo')+'" decoding="async">'}
   function icon(name){const paths={wifi:'<path d="M2 8a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0M8 16a6 6 0 0 1 8 0"/><circle cx="12" cy="20" r="1"/>',screen:'<rect x="2" y="3" width="20" height="15" rx="2"/><path d="M8 22h8M12 18v4M10 7l6 4-6 4z"/>',power:'<path d="M8 2v6M16 2v6M5 8h14v3a7 7 0 0 1-14 0zM12 18v5"/>',food:'<path d="M3 2v7a3 3 0 0 0 6 0V2M6 2v21M3 5h6M19 2c-4 4-4 11 0 11h2V2M20 13v10"/>',seat:'<path d="M5 3h4v10h10v5H9a4 4 0 0 1-4-4zM8 18v4M18 18v4"/>',cup:'<path d="M4 7h13v10a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM17 8h2a3 3 0 0 1 0 6h-2M7 2v2M13 2v2"/>',plane:'<path d="m2 15 8-4V3c0-2 4-2 4 0v8l8 4v3l-8-2v4l3 2H7l3-2v-4l-8 2z"/>',clock:'<circle cx="12" cy="12" r="10"/><path d="M12 5v7l5 3"/>'};return '<svg class="tv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[name]||paths.plane)+'</svg>'}
   const time=(iso,tz='America/Chicago')=>new Date(iso).toLocaleTimeString('en-US',{timeZone:tz,hour:'numeric',minute:'2-digit'}).toLowerCase();
   let f=null,settings=null,next=null,targetGate=requested||'follow',pageIndex=0,lastStep=null,lastAdvance=Date.now(),lastReceived=0,initialRead=false,workspaceRevision=-1,departureBank=[],gateNotice=null;
@@ -578,7 +699,7 @@ body.tv-mode{background:#000;color:#fff;overflow:hidden}.tv-mode #application,.t
     const prior=previous.length?'<div class="tv-groups-completed"><small>ALREADY CALLED</small><span>'+previous.map(g=>esc(g.short)).join('  ·  ')+'</span></div>':'';
     return '<div class="'+cls+'"><div class="tv-now-label">NOW BOARDING</div><div class="tv-current-group"><span>'+esc(current?.label||'Boarding now')+'</span><small>'+esc(current?.detail||'Please proceed when your group is called.')+'</small></div>'+prior+'<div class="tv-next-group">'+(next?'<span>UP NEXT</span><b>'+esc(next.label)+'</b><small>'+esc(next.detail)+'</small>':'<b>Final groups boarding</b>')+'</div><div class="tv-brand-step-list">'+steps.map(g=>'<span class="'+(g.id===f.boardingGroup?'active':g.id<f.boardingGroup?'done':'')+'">'+esc(g.short)+'</span>').join('')+'</div></div>';
   }
-  function render(){if(!f){mount.innerHTML='<div class="tv-loading"><h1>Gate display</h1><p>Open the agent workspace to load the flight bank.</p></div>';return}if(f.tv.brandOnly){const airline=C.airlineForFlight(f),isUnited=airline.code==='UA',helpGate=airline.boarding.overnightGate,wordmark=airlineLockup(airline),watermark=isUnited?'<img src="'+unitedLogo+'" alt="" aria-hidden="true">':'<strong class="tv-carrier-watermark">'+esc(airline.code)+'</strong>'; document.title=airline.name+' · Travel information';mount.innerHTML='<div class="ua-tv ua-tv-generic tv-generic-'+airline.boarding.style+'" style="--carrier-primary:'+airline.primary+';--carrier-accent:'+airline.accent+'" aria-label="Generic '+esc(airline.name)+' airport information"><header class="tv-generic-header"><div class="tv-generic-logo">'+wordmark+'</div><span>OVERNIGHT INFORMATION</span></header><div class="tv-generic-strip"><strong>WELCOME</strong><span>Travel information</span></div><main class="tv-generic-main"><section class="tv-generic-hero"><div class="tv-generic-watermark">'+watermark+'</div><small>'+esc(airline.name.toUpperCase())+'</small><h1>Your journey<br>starts here.</h1><p>Travel information from '+esc(airline.name)+'.</p></section><section class="tv-generic-info"><h2>Here for your journey</h2><div class="tv-generic-card tv-overnight-assistance"><b>Overnight assistance</b><p>Please proceed to <strong>Gate '+esc(helpGate)+'</strong> for '+esc(airline.name)+' overnight assistance.</p></div><div class="tv-generic-card"><b>'+esc(airline.name)+' travel updates</b><p>Check your '+esc(airline.shortName||airline.name)+' app for itinerary updates and helpful services.</p></div><div class="tv-generic-card"><b>Travel ready</b><p>Keep your boarding pass and travel documents close at hand.</p></div><div class="tv-generic-card"><b>We’re here to help</b><p>Ask an airport team member if you need assistance.</p></div></section></main><footer class="tv-generic-footer"><span>'+esc(airline.name.toUpperCase())+'</span><span>Thank you for choosing '+esc(airline.name)+'</span></footer></div>';return}const sequence=panes(f);pageIndex=((pageIndex%sequence.length)+sequence.length)%sequence.length;const pane=sequence[pageIndex],isDelay=C.publicStatus(f)==='Delayed',title=pane.type==='upgrades'?'Upgrades':pane.type==='standby'?'Standbys':'Flight';const airline=C.airlineForFlight(f);document.title=airline.name+' · '+f.destination+' · Gate '+f.gate;
+  function render(){if(!f){mount.innerHTML='<div class="tv-loading"><h1>Gate display</h1><p>Open the agent workspace to load the flight bank.</p></div>';return}if(f.tv.brandOnly){const airline=C.airlineForFlight(f),helpGate=airline.boarding.overnightGate,wordmark=airlineLockup(airline),watermark='<img src="'+logoURL(airline.code)+'" alt="" aria-hidden="true">'; document.title=airline.name+' · Travel information';mount.innerHTML='<div class="ua-tv ua-tv-generic tv-generic-'+airline.boarding.style+'" style="--carrier-primary:'+airline.primary+';--carrier-accent:'+airline.accent+'" aria-label="Generic '+esc(airline.name)+' airport information"><header class="tv-generic-header"><div class="tv-generic-logo">'+wordmark+'</div><span>OVERNIGHT INFORMATION</span></header><div class="tv-generic-strip"><strong>WELCOME</strong><span>Travel information</span></div><main class="tv-generic-main"><section class="tv-generic-hero"><div class="tv-generic-watermark">'+watermark+'</div><small>'+esc(airline.name.toUpperCase())+'</small><h1>Your journey<br>starts here.</h1><p>Travel information from '+esc(airline.name)+'.</p></section><section class="tv-generic-info"><h2>Here for your journey</h2><div class="tv-generic-card tv-overnight-assistance"><b>Overnight assistance</b><p>Please proceed to <strong>Gate '+esc(helpGate)+'</strong> for '+esc(airline.name)+' overnight assistance.</p></div><div class="tv-generic-card"><b>'+esc(airline.name)+' travel updates</b><p>Check your '+esc(airline.shortName||airline.name)+' app for itinerary updates and helpful services.</p></div><div class="tv-generic-card"><b>Travel ready</b><p>Keep your boarding pass and travel documents close at hand.</p></div><div class="tv-generic-card"><b>We’re here to help</b><p>Ask an airport team member if you need assistance.</p></div></section></main><footer class="tv-generic-footer"><span>'+esc(airline.name.toUpperCase())+'</span><span>Thank you for choosing '+esc(airline.name)+'</span></footer></div>';return}const sequence=panes(f);pageIndex=((pageIndex%sequence.length)+sequence.length)%sequence.length;const pane=sequence[pageIndex],isDelay=C.publicStatus(f)==='Delayed',title=pane.type==='upgrades'?'Upgrades':pane.type==='standby'?'Standbys':'Flight';const airline=C.airlineForFlight(f);document.title=airline.name+' · '+f.destination+' · Gate '+f.gate;
     mount.innerHTML='<div class="ua-tv tv-layout-'+airline.boarding.style+'" style="--carrier-primary:'+airline.primary+';--carrier-accent:'+airline.accent+'"><header class="tv-black-header"><h1>'+esc(f.city)+' ('+esc(f.destination)+')</h1><div class="tv-brand tv-brand-'+airline.boarding.style+'">'+airlineLockup(airline)+'</div><strong class="tv-header-gate">'+esc(f.gate)+'</strong></header><div class="tv-flight-strip"><strong class="tv-flight-number">'+icon('plane')+' '+esc(f.number)+'</strong><div><label>'+icon('plane')+' Est. departure</label><b>'+time(f.departureAt)+'</b></div><div><label>'+icon('clock')+' Boarding time</label><b>'+time(f.boardingAt)+'</b></div><span class="tv-status-pill '+(isDelay?'delay':'')+'">'+esc(C.publicStatus(f))+'</span></div><main class="tv-split-body"><section class="tv-information"><div class="tv-pane-tabs">'+['Flight','Upgrades','Standbys'].map(t=>'<span class="'+(t===title?'active':'')+'">'+t+'</span>').join('')+'</div><div class="tv-pane-content">'+(['upgrades','standby'].includes(pane.type)?listPane(pane):detailPane(pane))+'</div></section><section class="tv-boarding-status"><div class="tv-boarding-heading">'+(f.phase==='OPEN'?'Flight preparation':f.phase==='CLOSED'?'Departure status':f.boardingGroup===0?'Preboarding now':'Now boarding '+esc(C.groupLabel(f.boardingGroup,f)))+'</div>'+boardingPane()+'</section></main>'+(gateNotice&&gateNotice.expires>Date.now()?'<div class="tv-announcement-strip"><b>GATE CHANGE</b> · '+esc(gateNotice.number)+' to '+esc(gateNotice.city)+' now departs from '+esc(gateNotice.toGate)+'</div>':'')+(f.tv.message||f.delayReason?'<div class="tv-announcement-strip">'+esc(f.tv.message||f.delayReason)+'</div>':'')+'<footer class="tv-black-footer"><div>→ Next departure: '+esc(next?.city||C.previewNext(f).city)+' ('+esc(next?.destination||C.previewNext(f).destination)+') <b>✈ '+esc(next?.number||C.previewNext(f).number)+'</b> <b>'+time(next?.departureAt||C.previewNext(f).departureAt)+'</b></div><div id="tv-clock"></div></footer><div class="tv-control-buttons"><button data-tv="previous">←</button><button data-tv="next">→</button><button data-tv="fullscreen">Full screen</button><span>LWI simulation</span></div></div>';
     clock();
   }
